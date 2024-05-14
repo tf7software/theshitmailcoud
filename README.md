@@ -1,2 +1,2 @@
 # thethitmailcoud
-Repo for https://theshitmail.cloud/
+Repo for [theshitmailcloud](https://theshitmail.cloud/)
