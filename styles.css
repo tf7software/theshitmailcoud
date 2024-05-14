@@ -1,0 +1,86 @@
+/* styles.css */
+
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+/* Form styles */
+.input-container {
+    margin-bottom: 15px;
+}
+
+input[type="text"],
+input[type="url"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* Error message styles */
+.error-msg {
+    color: red;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+/* Blog list styles */
+.blog-list-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#blog-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.blog-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    position: relative;
+}
+
+.blog-card h2 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.blog-card img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 8px;
+}
+
+.blog-card p {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.pinned-indicator {
+    background-color: gold;
+    color: black;
+    font-weight: bold;
+    padding: 4px;
+    border-radius: 4px;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+}
